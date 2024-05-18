@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@drawable/raining_gradient"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <SearchView
+        android:id="@+id/searchViewMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rect_search_bg_top_bottom_radius"
+        android:iconifiedByDefault="false"
+        android:queryHint="Enter your city name here.."
+        android:queryBackground="@color/white"
+        android:backgroundTint="@color/white"
+        android:searchIcon="@drawable/searchweather"
+        android:soundEffectsEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Date"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/cityMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="City Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/dateMain"
+        app:layout_constraintTop_toBottomOf="@+id/dateMain" />
+
+    <TextView
+        android:id="@+id/temperatureReadingMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:gravity="bottom"
+        android:text="24"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="bottom"
+        android:text="°"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/temperatureReadingMain" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:gravity="bottom"
+        android:text="c"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/temperatureReadingMain"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/temperatureReadingMain" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationViewSunRiseSet"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/searchViewMain"
+        app:layout_constraintStart_toStartOf="@+id/searchViewMain"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureReadingMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:lottie_rawRes="@raw/sunrisesetlottie" />
+
+    <TextView
+        android:id="@+id/minTempMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Min : 23.32"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/maxTempMain"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureReadingMain" />
+
+    <TextView
+        android:id="@+id/maxTempMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Max : 38.42"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/minTempMain"
+        app:layout_constraintTop_toBottomOf="@+id/minTempMain" />
+
+    <TextView
+        android:id="@+id/dayTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="WEDNESDAY"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/searchViewMain"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/searchViewMain"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/todaysConditionbelowDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Sunny"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/dayTxt"
+        app:layout_constraintStart_toStartOf="@+id/dayTxt"
+        app:layout_constraintTop_toBottomOf="@+id/dayTxt" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/temperatureReadingMain"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/searchViewMain"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewMain" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewMain"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/cloudslottie"
+     />
+
+    <!--    <View-->
+    <!--        android:id="@+id/view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="330dp"-->
+    <!--        android:background="@drawable/rec_white_bg_top_radius"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="270dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todaysConditionbelowDay" />
+<!--        android:background="@drawable/rec_top_bottom_inside_view"-->
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/view_rec_bg_top_bottom_radius_white_transpancy"
+        app:layout_constraintBottom_toTopOf="@id/sunRiseView"
+        app:layout_constraintEnd_toStartOf="@+id/windSpeed"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/tempImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/humidity"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/tempReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="70"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tempType"
+        app:layout_constraintStart_toStartOf="@+id/tempType"
+        app:layout_constraintTop_toBottomOf="@+id/tempImage" />
+
+    <TextView
+        android:id="@+id/tempType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Humidity"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/tempReading" />
+
+    <View
+        android:id="@+id/windSpeed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/view_rec_bg_top_bottom_radius_white_transpancy"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@id/rainView"
+        app:layout_constraintStart_toEndOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <ImageView
+        android:id="@+id/windImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/wind"
+        app:layout_constraintEnd_toEndOf="@+id/windSpeed"
+        app:layout_constraintStart_toStartOf="@+id/windSpeed"
+        app:layout_constraintTop_toTopOf="@+id/tempImage" />
+
+    <TextView
+        android:id="@+id/windSpeedReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="3.33"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/windSpeedtxt"
+        app:layout_constraintStart_toStartOf="@+id/windSpeedtxt"
+        app:layout_constraintTop_toBottomOf="@+id/tempImage" />
+
+    <TextView
+        android:id="@+id/windSpeedtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Wind Speed"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/windSpeed"
+        app:layout_constraintStart_toStartOf="@+id/windSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/tempReading" />
+
+    <View
+        android:id="@+id/rainView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/view_rec_bg_top_bottom_radius_white_transpancy"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@id/view2"
+        app:layout_constraintStart_toEndOf="@+id/windSpeed"
+        app:layout_constraintTop_toTopOf="@+id/windSpeed" />
+
+    <ImageView
+        android:id="@+id/conditionImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/thunderstorm"
+        app:layout_constraintEnd_toEndOf="@+id/rainView"
+        app:layout_constraintStart_toEndOf="@+id/windSpeed"
+        app:layout_constraintTop_toTopOf="@+id/tempImage" />
+
+    <TextView
+        android:id="@+id/conditionType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Rain"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/ConditionTxt"
+        app:layout_constraintEnd_toEndOf="@+id/ConditionTxt"
+        app:layout_constraintStart_toStartOf="@+id/ConditionTxt"
+        app:layout_constraintTop_toBottomOf="@+id/tempImage" />
+
+    <TextView
+        android:id="@+id/ConditionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Conditions"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/rainView"
+        app:layout_constraintStart_toStartOf="@+id/rainView"
+        app:layout_constraintTop_toBottomOf="@+id/tempReading" />
+
+    <View
+        android:id="@+id/sunRiseView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/view_rec_bg_top_bottom_radius_white_transpancy"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <ImageView
+        android:id="@+id/sunRiseImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/solarflare"
+        app:layout_constraintEnd_toEndOf="@+id/sunRiseView"
+        app:layout_constraintStart_toStartOf="@+id/sunRiseView"
+        app:layout_constraintTop_toTopOf="@+id/sunRiseView" />
+
+    <TextView
+        android:id="@+id/sunRiseReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="10054"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/sunRiseTxt"
+        app:layout_constraintStart_toStartOf="@+id/sunRiseTxt"
+        app:layout_constraintTop_toBottomOf="@+id/sunRiseImage" />
+
+    <TextView
+        android:id="@+id/sunRiseTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Sun Rise"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/sunRiseView"
+        app:layout_constraintStart_toStartOf="@+id/sunRiseView"
+        app:layout_constraintTop_toBottomOf="@+id/sunRiseReading" />
+
+    <View
+        android:id="@+id/sunSetView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/view_rec_bg_top_bottom_radius_white_transpancy"
+        app:layout_constraintBottom_toBottomOf="@+id/sunRiseView"
+        app:layout_constraintEnd_toEndOf="@+id/windSpeed"
+        app:layout_constraintStart_toStartOf="@+id/windSpeed"
+        app:layout_constraintTop_toTopOf="@+id/sunRiseView" />
+
+    <ImageView
+        android:id="@+id/sunSetImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/sunseet"
+        app:layout_constraintEnd_toEndOf="@+id/sunSetView"
+        app:layout_constraintStart_toEndOf="@+id/sunRiseView"
+        app:layout_constraintTop_toTopOf="@+id/sunRiseView" />
+
+    <TextView
+        android:id="@+id/sunSetReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="10540"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/sunSetTxt"
+        app:layout_constraintStart_toStartOf="@+id/sunSetTxt"
+        app:layout_constraintTop_toBottomOf="@+id/sunRiseImage" />
+
+    <TextView
+        android:id="@+id/sunSetTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Sun Set"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/sunSetView"
+        app:layout_constraintStart_toStartOf="@+id/sunSetView"
+        app:layout_constraintTop_toBottomOf="@+id/sunRiseReading" />
+
+    <View
+        android:id="@+id/seaView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/view_rec_bg_top_bottom_radius_white_transpancy"
+        app:layout_constraintBottom_toBottomOf="@+id/sunSetView"
+        app:layout_constraintEnd_toEndOf="@+id/rainView"
+        app:layout_constraintStart_toStartOf="@+id/rainView"
+        app:layout_constraintTop_toTopOf="@+id/sunSetView" />
+
+    <ImageView
+        android:id="@+id/seaImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/waves"
+        app:layout_constraintEnd_toEndOf="@+id/seaView"
+        app:layout_constraintStart_toStartOf="@+id/seaView"
+        app:layout_constraintTop_toTopOf="@+id/sunRiseView" />
+
+    <TextView
+        android:id="@+id/seaReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="100"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/seaRiseTxt"
+        app:layout_constraintStart_toStartOf="@+id/seaRiseTxt"
+        app:layout_constraintTop_toBottomOf="@+id/sunRiseImage" />
+
+    <TextView
+        android:id="@+id/seaRiseTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:text="Sea"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/seaView"
+        app:layout_constraintStart_toStartOf="@+id/seaView"
+        app:layout_constraintTop_toBottomOf="@+id/sunRiseReading" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/hind_vadodara_medium"
+        android:gravity="center"
+        android:text="Designed By Valen Patel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+<!--    <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--        android:id="@+id/shimmerLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <include layout="@layout/shimmer_for_main" />-->
+<!--    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
