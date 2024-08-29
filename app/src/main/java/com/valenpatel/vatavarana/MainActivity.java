@@ -220,7 +220,6 @@ public class MainActivity extends AppCompatActivity {
     private void lottieToCurrentFramesAnimation(int targetFrame) {
         // Set the initial frame to 0
         binding.lottieAnimationViewSunRiseSet.setFrame(0);
-
         // Create a ValueAnimator to animate from 0 to targetFrame
         ValueAnimator animator = ValueAnimator.ofInt(0, targetFrame);
         animator.setDuration(2000); // Set the duration of the animation (e.g., 2000ms or 2 seconds)
