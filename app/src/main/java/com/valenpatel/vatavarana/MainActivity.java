@@ -1,8 +1,10 @@
-package com.example.vatavarana;
+package com.valenpatel.vatavarana;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -16,7 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieCompositionFactory;
 import com.airbnb.lottie.LottieListener;
-import com.example.vatavarana.databinding.ActivityMainBinding;
+import com.valenpatel.vatavarana.databinding.ActivityMainBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     int sunriseHourFromAPI;
     int sunsetHourFromAPI;
     int currentFrame;
+    ImageView moreImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
+        moreImage = findViewById(R.id.moreImageView);
+        moreImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainActivity2.class));
+
+            }
+        });
         //default city
         fetchWeatherData("pune");
 
@@ -119,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<WeatherModel> call, Throwable throwable) {
             }
         });
+
     }
 
     private void lottieSetSunsCurrentPosition(int sunriseHourFromAP, int sunsetHourFromAP) {
@@ -160,9 +174,9 @@ public class MainActivity extends AppCompatActivity {
                     // Map the time fraction to the total frames of the animation
                     currentFrame = (int) (timeFraction * totalFrames);
 
-                   //functrion for animation to current frame
+                    //functrion for animation to current frame
                     lottieToCurrentFramesAnimation(currentFrame);
-                   //setting Sun's current position on lottie
+                    //setting Sun's current position on lottie
                     binding.lottieAnimationViewSunRiseSet.setFrame(currentFrame);
                 } else {
                     // If the current time is outside the sunrise to sunset period, pause the animation

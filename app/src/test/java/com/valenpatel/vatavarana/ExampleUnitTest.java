@@ -1,4 +1,4 @@
-package com.example.vatavarana;
+package com.valenpatel.vatavarana;
 
 import org.junit.Test;
 

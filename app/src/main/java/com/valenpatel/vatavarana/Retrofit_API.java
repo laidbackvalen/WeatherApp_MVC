@@ -1,4 +1,4 @@
-package com.example.vatavarana;
+package com.valenpatel.vatavarana;
 
 
 import retrofit2.Call;
@@ -16,3 +16,9 @@ public interface Retrofit_API {
             @Query("appid") String appid,
             @Query("units") String units);
 }
+//https://api.openweathermap.org/data/2.5/weather?q=valsad&appid=1be9c93fa620d80a5ee6559d7a8652a6&units=metric
+
+//Here’s a summary of how your Retrofit setup works:
+//Base URL: https://api.openweathermap.org/data/2.5/
+//Endpoint: weather
+//Parameters: q, appid, and units

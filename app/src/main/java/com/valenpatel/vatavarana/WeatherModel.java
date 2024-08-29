@@ -1,6 +1,6 @@
 // WeatherModel.java
 
-package com.example.vatavarana;
+package com.valenpatel.vatavarana;
 import java.util.List;
 
 public class WeatherModel {
